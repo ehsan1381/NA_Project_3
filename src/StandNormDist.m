@@ -1,20 +1,20 @@
-function integralVal = StandNormDist(start, end, count)
-  if count ~= floor(count)
-    error('count must be an integer');
+function integralVal = StandNormDist(interval_start, interval_end, partition_count)
+  if partition_count ~= floor(partition_count)
+    error('partition count must be an integer');
   end % if
 
-  func = @(x)(exp(-0.5 x.^2 ));
+  func = @(x)(exp(-0.5 * x.^2 ));
   coeff = 1/sqrt(2*pi);
 
-  X = linspace(start, end, count);
+  X = linspace(interval_start, interval_end, partition_count);
   hHalf = (X(2) - X(1)) / 2;
 
 
-  elementAra = zeros([1, count-1]);
+  elementAra = zeros([1, partition_count-1]);
 
   trapezoid = @(f_0, f_1)(hHalf * (f_0 + f_1));
 
-  for i=1:count-1
+  for i=1:partition_count-1
     x_0 = X(i);
     x_1 = X(i+1);
     f_0 = func(x_0);
