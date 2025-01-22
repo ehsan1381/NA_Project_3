@@ -10,7 +10,7 @@ function integralVal = StandNormDist(interval_start, interval_end, partition_cou
   hHalf = (X(2) - X(1)) / 2;
 
 
-  elementAra = zeros([1, partition_count-1]);
+  elementArea = zeros([1, partition_count-1]);
 
   trapezoid = @(f_0, f_1)(hHalf * (f_0 + f_1));
 
@@ -23,7 +23,6 @@ function integralVal = StandNormDist(interval_start, interval_end, partition_cou
     elementArea(i) = trapezoid(f_0, f_1);
 
   end % for
-  elementArea = coeff * elementArea;
-  integralVal = sum(elementArea);
+  integralVal = coeff * sum(elementArea);
 
 end % function
