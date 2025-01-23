@@ -38,10 +38,10 @@ The function 'StandNormDist' performs integration, given inputs 'a, b, n'. 'a' a
 integration bounds and 'n' dictates to how many pieces should the partition for integration be. This
 function uses trapezoid method for integraion.
 Function 'Phi', as said previously, is a wrapper for 'StandNormDist'. Since the lower integration
-bound in the problem is $-\inf$, and we cannot use $-\inf$ in computation we have to use a number
-that is large enough in magnitude that relative to our calculations, mimmicks how $-\inf$ would
+bound in the problem is $-\infty$, and we cannot use $-\infty$ in computation we have to use a number
+that is large enough in magnitude that relative to our calculations, mimmicks how $-\infty$ would
 behave. This function also computes argument 'n' for 'StandNormDist' by calculating the length of
-the interval $[-A, b]$ and multiplying by $2^7$ where $-A$ is our value for $-\inf$.
+the interval $[-A, b]$ and multiplying by $2^7$ where $-A$ is our value for $-\infty$.
 In the end we have a simple script which builds the table step by step.
 
 # Performance review
